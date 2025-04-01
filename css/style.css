@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+/*ローディング画面からメイン画面に遷移する部分*/
+/* ================================================================== */
+
+/* 薄いグレーのスクリーンが画面いっぱいに広がる */
+#loading {
+    background-color: var(--light-grey);
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+/* 薄緑のスクリーンを画面いっぱいに表示 */
+#loading-screen {
+    background-color: var(--light-green);
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    translate: 0 100vh;     /*メイン画面の下に隠す*/
+}
+/* ローディング表示の文字 */
+#loading p {
+    font-size: 2rem;
+    font-family: var(--oswald-font);
+}
+
+
+/*hobby: ギャラリーのレイアウト*/
+/* ===================================================================*/
+.gallery {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.gallery-image {
+    width: min(100%, calc(38rem - 2rem));
+    margin: auto;
+    position: relative;
+}
+.gallery-image::after {
+    display: block;
+    content: '';
+    width: calc(100% - 2rem);
+    height: calc(100% - 2.5rem);
+    z-index: 3;
+    border: 3px solid var(--white);
+    top: 1rem;
+    left: 1rem;
+    position: absolute;
+}
+.gallery-image img {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    width: 100%;
+}
+.gallery-thumbnails {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    list-style: none;
+    margin: 1rem 0;
+}
+.gallery-thumbnails img {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+
+/*スライドメニューのレイアウト*/
+/* ========================================================*/
+/* 開閉ボタン */
+.btn-menu {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 4;
+    padding: .5rem 1rem;
+    border: 1px solid var(--brown);
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    transition: .4s;
+}
+.btn-menu svg {
+    fill: var(--brown);
+    margin-top: .25rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+/* 閉じるボタン */
+#menu-close {
+    border: 1px solid var(--light-green);
+}
+#menu-close svg {
+    fill: var(--light-green);
+}
+
+/* スライドメニューパネル */
+#menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    padding: 8rem 2rem 2rem;
+    width: max(32vw, 20rem);
+    height: 100vh;
+    background-color: var(--brown);
+    box-shadow: 0 0 2rem var(--brown);
+    font-family: var(--oswald-font);
+    translate: 100vw;
+}
+.menu-list {
+    list-style: none;
+}
+.menu-list li {
+    margin: 1.5rem 0;
+    opacity: 0;
+}
+.menu-list a {
+    color: var(--light-green);
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+
+/* COMONクリーン画面のレイアウト(これがないと流れない) */
+:root {
+    --light-grey: #eee;                     /*薄いグレーのスクリーン*/
+    --light-green: #d5edeb;                 /*薄い緑のスクリーン*/
+    --brown: #403632;                       /*スライドメニューの背景色*/
+    --green: #63dbd0;                       /*スライドメニュー選択時の色*/
+    
+    /*
+    --white: #fff;  
+    --oswald-font: 'Oswald', sans-serif; */
+}
+
+
+/*スライドメニューの共通項目(SLIDE MENU)*/
+/* ======================================================== */
+.title {
+    font-family: var(--oswald-font);
+    font-size: min(10vw, 4rem);
+    margin-bottom: 2rem;
+}
+.btn {
+    color: var(--white);
+    background: var(--brown);
+    border: 1px solid var(--brown);
+    text-decoration: none;
+    padding: 1rem;
+    display: inline-block;
+    margin: 2rem 0;
+    transition: .4s;
+}
+.fadein{
+    opacity: 0;
+}
+
+
+/*DESKTOP SIZE
+================================================================= */
+@media(min-width: 800px){
+/* SLIDE MENU */
+    /* メニュー開くんボタンの背景を水色で装飾 */
+    .btn-menu:hover {
+        background-color: var(--light-green);
+    }
+    /* メニュー閉じるボタンの背景の装飾 */
+    #menu-close:hover svg {
+        fill: var(--brown);
+    }
+    /* メニュー項目の選択時の色 */
+    .menu-list a:hover {
+        transition: .4s;
+        color: var(--green);
+    }
+}
