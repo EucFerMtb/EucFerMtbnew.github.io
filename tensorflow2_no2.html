@@ -1,0 +1,136 @@
+<!--ブログの頁-->
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>機械学習を行う為のツール導入について</title>
+        <meta name="description" content="tensorflow2を使って機械学習">
+        <link rel="stylesheet" href="stylemain.css">
+        <!--CSS-->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Philosopher:ital@0;1&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="brog" class="big-bg">
+            <!--ページの上部を作成する-->
+            <header class="home-header wrapper">
+                <!--ナビゲーションメニュー(メニューバーの作成)-->
+                <nav>
+                    <ul class="main-nav">
+                        <li><a href="main.html">Home</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="brog.html">Brog</a></li>
+                        <li><a href="information.html">Information</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- 見出し -->
+            <div class="wrapper">
+                <h2 class="page-title brog-color">Brog</h2>
+            </div>
+        </div>
+
+
+        <!-- brog content -->
+        <div class="brog-content wrapper">
+            <article>
+                <header class="brog-info post-info">
+                    <h2 class="post-title brog-title">機械学習を行う為のツール導入について</h2>
+                    <p class="date">5/28 <span>2023</span></p>
+                    <p class="brog-cat">カテゴリー : 機械学習実装の手順2</p>
+                </header>
+
+                <p>
+                    このページでは、機械学習を進める上で必要なツールの導入を行います.
+                    具体的には, tensorflow2やmatplotlibを入れていきます.
+                    汎用性ある内容も記載しています.
+                    また, まだ機械学習の仮想環境構築ができていない場合は, 右のタスクバーの「機械学習を行う為の仮想環境構築について」
+                    を参考に構築を行ってからこのページの内容を参照して頂けると良いかと思います.
+                </p>
+
+                <main>
+                    <h3>5. tensorflow2のインストール</h3>
+                        <p>
+                            早速, 仮想環境内にtensorflow2を入れていきましょう.
+                            コマンドに"pip install tensorflow"を入力し, Enterしてください.
+                            しばらく成功するまで待ちましょう.
+                        </p>
+                        <div class="kanazawa-gazou">
+                            <img class="kanazawa" src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample9.png?raw=true" alt="">
+                            <img class="kanazawa" src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample10.png?raw=true" alt="">
+                        </div>
+
+                        <p>
+                            インストール成功したら, 検証します. コマンドに, 
+                            "python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+                            と入力してEnterしてください.
+                            最後, tf.Tensor(-674.89984, shape=(), dtype=float32)みたいなものが出たらOKです.
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample11.png?raw=true" width="60%" height="60%" alt="">
+                      
+                        
+                    <h3>6. tensorflow2のアップデート</h3>
+                        <p>
+                            tensorflow2のインストールが確認できたら, コマンドに"pip install --upgrade tensorflow"と入力して, Enterしてください.
+                            これで, tensorflow2のアップデートができます.
+                        </p>
+                        <div class="kanazawa-gazou">
+                            <img class="kanazawa" src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample12.png?raw=true" alt="">
+                            <img class="kanazawa" src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample13.png?raw=true" alt="">
+                        </div>
+
+                    <h3>7. matplotlibのインストール</h3>
+                        <p>
+                            ここでは, matplotlibのインストールの紹介にいきます.
+                            matplotlibは, グラフを描写するとき等に必要不可欠なものになるので入れておくと良いでしょう.<br>
+                            コマンドに, "pip install -U matplotlib"を入力して, Enterしてください.
+                        </p>
+                        <div class="kanazawa-gazou">
+                            <img class="kanazawa" src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample14.png?raw=true" alt="">
+                            <img class="kanazawa" src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample15.png?raw=true" alt="">
+                        </div>
+                        
+                    
+                    <h2>最後に～割と重要なこと～</h2>
+                        <p>
+                            上記は, tensorflow2やmatplotlibのインストール方法を紹介しました.
+                            今後, 例えば機械学習を進める(VSCode)上で必要なツールがある場合, 
+                            コマンドで「ERROR表示で～～～をinstallせよ」的なものがでますので安心してください. 
+                            そのときは, コマンドに"pip install ～～～"と書いてEnterすればインストールされます
+                            (tensorflow2やmatplotlibはその例).<br>
+                            また, インストールとアップデートを両方同時にやる方法として, コマンドに
+                            "pip install --upgrade ～～～" 或いは "pip install -U ～～～"と書いて実行すればいけます
+                            (Installing ～～～～～. Successfully installed～～～みたいなものが出たらOKです).<br>
+                            それ以外に起こりうりそうなことを纏めておきます.
+                            <ul class="pro-yohaku">
+                                <li>no module 'sklearn'がでたら・・・コマンドで"pip install -U scikit-learn"を入力</li>
+                                <li>cv2(open cvなどで利用)はpip3対応なので, "pip3 install --upgrade opencv-python"とする必要があります(padasも同様です).</li>
+                            </ul>
+                        </p>
+                </main>
+            </article>
+
+            <aside>
+                <h3 class="brog-info">カテゴリー</h3>
+                <ul class="sub-brog">
+                    <li><a href="instagram.html">Instagramの紹介</a></li>
+                    <li><a href="HTML.html">HTMLの勉強用</a></li>
+                    <li><a href="tensorflow2_no1.html">機械学習を行う為の仮想環境構築について</a></li>
+                    <li><a href="tensorflow2_no2.html">機械学習を行う為のツール導入について</a></li>
+                    <li><a href="study_bg.html">コンピュータの計算に隠された罠</a></li>
+                </ul>
+            </aside>
+        </div>
+        
+        
+        <!-- フッターの作成 -->
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2023 Blue-Mountain</small></p>
+            </div>
+        </footer>
+    </body>
+
+</html>

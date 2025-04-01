@@ -1,0 +1,339 @@
+@charset "UTF-8";
+/* 全ページ共通部分 */
+/*==========================================================================================================  */
+
+    html {
+        /* 文字サイズを正しく反映 */
+        font-size: 100%;
+    }
+    body{
+        /* 書体指定 */
+        font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic,"游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+        /* 行の高さ */
+        line-height: 1.7;
+        color: black;
+        /* marginで上部の余白をなくせる */
+        margin: 0;
+    }
+    img{
+        max-width: 100%;
+    }
+    
+    /* 背景画面の設定 */
+    .big-bg{
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* 見出し */
+    .page-title{
+        font-size: 5rem;
+        font-family: 'Philosopher',serif;
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+    /* サブタイトル */
+    .sub-title{
+        font-size: 1.375rem;
+        padding: 0 8px 8px;
+        border-bottom: 2px #0bd solid;
+        font-weight: normal;
+    }
+
+    /* フッターの装飾 */
+    footer{
+        background: #432;
+        text-align: center;
+        padding: 26px 0;
+    }
+    footer p{
+        color: #fff;
+        font-size: 0.875rem;
+    }
+
+    /* 動画の装飾 */
+    .douga{
+        margin: 10px;
+        padding: 10px;
+        width: 50%;
+        height: 50%;
+    }
+    .douga_style{
+        display: flex;
+    }
+
+    /* 表の調整 */
+    table th{
+        padding: 20px 10px;
+        border: double 1px #0bd;
+    }
+    table td{
+        padding: 20px 10px;
+        border: double 1px #0bd;
+    }
+
+
+
+
+
+
+/* メインページの装飾はここから */
+/*=======================================================================================================  */
+
+/* ナビゲーションメニューの装飾 */
+    /* 横並びにする */
+    .main-nav{
+        display: flex;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        margin-top: 34px;
+        list-style: none;   /*箇条書きの「・」をなくす*/
+    }
+    .main-nav li{
+        margin-left: 36px
+    }
+    .main-bg{
+        background-color: #dbedf0;
+        width: 45%;
+        margin-left: 1.5%;
+    }
+    .main-intro{
+        list-style: none;   /*箇条書きの「・」をなくす*/
+    }
+    .main-nav a{
+        background-color: yellow;
+        color: black;
+        cursor: pointer;
+    }
+    .main-nav a:hover{
+        /* カーソルが触れたとき文字の色が変わる */
+        color: red;
+    }
+    .home-header{
+        /* 横並び */
+        display: flex;
+        /* 両端の設置の指定 */
+        justify-content: right;
+    }
+    .wrapper{
+        /* 最大の横幅の指定 */
+        max-width: 1100px; 
+        /*中央に配置する指定  */
+        margin: 0 auto;
+    }
+
+
+/* メインページの背景画面 */
+    #main{
+        background-image: url(../MyHomePage/images/homemain.jpg);
+        min-height: 100vh;
+    }
+    
+
+
+
+
+
+/* Profileの装飾
+======================================================================================== */
+    #Profile{
+        background-image: url(../MyHomePage/images/profile-top.jpg);
+        height: 270px;
+        margin-bottom: 40px;
+    }
+    /* 「Profile」の名前の調整 */
+    .profilemei{
+        color: #0bd;
+    }
+    /* 「Profile」の背景の色*/
+    .pro-body{
+        background-color: #dbedf0;
+    }
+    .profile-nav a:hover{
+        /* カーソルが触れたとき文字の色が変わる */
+        color: red;
+    }
+    .pro-content{
+        margin: 0;
+    }
+
+    /* 箇条書きの文字の左側に余白をつくる */
+    .pro-yohaku{
+        margin-left: 50px;
+    }
+
+
+
+
+
+/* Brogの装飾
+=============================================================================================== */
+    #brog{
+        background-image: url(images/brog-bg.jpg);
+        height: 270px;
+        margin-bottom: 40px;
+    }
+    /* 「Brog」の色 */
+    .brog-color{
+        color: yellow;
+    }
+    article{
+        width: 74%;
+    }
+    aside{
+        width: 22%;
+    }
+    /* brog-contentの装飾 */
+    .brog-content{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+    .post-title{
+        font-family: "Yu Minchp", "YuMinchp", serif;
+        font-size: 2rem;
+        font-weight: normal;
+    }
+    .brog-info{
+        font-size: 1.375rem;
+        padding: 0 8px 8px;
+        border-bottom: 2px #432 solid;
+        font-weight: normal;
+    }
+
+    /* サイドバーの箇条書きの装飾 */
+    .sub-brog{
+        margin-bottom: 60px;
+        list-style: none;
+    }
+    .sub-brog li{
+        border-bottom: 1px #ddd solid;
+    }
+    .sub-brog a{
+        color: #432;
+        padding: 10px;
+        display: block;
+    }
+    .sub-brog a:hover{
+        color: red;
+    }
+
+
+
+/* 各ブログで必要な装飾 */
+/* ===================================================================================== */
+    .date{
+        background: #0bd;
+        border-radius: 50%;
+        color: #fff;
+        width: 90px;
+        height: 90px;
+        font-size: 1.625rem;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        padding-top: 10px;
+    }
+    .post-info{
+        /* 相対位置 */
+        position: relative;
+        padding-top: 4px;
+        margin-bottom: 40px;
+    }
+    .date span{
+        font-size: 1rem;
+        border-top: 1px rgba(255, 255, 255, .5) solid;
+        padding-top: 6px;
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+    }
+    .brog-title,.brog-cat{
+        margin-left: 120px;
+    }
+
+    /* Instagramのサイトにいくとき赤色表示する */
+    .instagram-nav a:hover{
+        /* カーソルが触れたとき文字の色が変わる */
+        color: red;
+    }
+    
+    /* 勉強用の装飾 */
+    .kanazawa{
+        margin: 10px;
+        padding: 10px;
+        width: 40%;
+        height: 40%;
+    }
+    .kanazawa-gazou{
+        display: flex;
+    }
+
+
+
+
+
+
+
+
+
+/* Informationの装飾 */
+/* ============================================================================================ */
+    #information{
+        background-image: url(../MyHomePage/images/informaition-bg.jpg);
+        height: 270px;
+        margin: 0;
+    }
+
+    .info-form{
+        text-align: center;
+    }
+
+    /* 「地図」の装飾 */
+    #location{
+        padding: 4% 0;
+    }
+    #location .wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+    .location-map{
+        width: 74%;
+    }
+    iframe{
+        width: 90%;
+    }
+
+    /* 「地図」の紹介の文章 */
+    .location-info{
+        width: 22%;
+    }
+    .location-info p{
+        padding: 12px 10px;
+    }
+    
+    /* SNS関連の装飾 */
+    #sns{
+        background: #FaF7F0;
+        padding: 4% 0;
+    }
+    #sns .wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+    #sns .sub-title{
+        margin-bottom: 30px;
+    }
+    .sns-box{
+        width: 30%; 
+    }
+    .info-form a:hover{
+        color: red;
+    }
+    .location-info a:hover{
+        color: red;
+    }
+    .sns-box a:hover{
+        color: red;
+    }

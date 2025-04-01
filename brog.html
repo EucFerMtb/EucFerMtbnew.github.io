@@ -1,0 +1,83 @@
+<!--ブログの頁-->
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>ブログページ</title>
+        <meta name="description" content="ブログのページ">
+        <link rel="stylesheet" href="stylemain.css">
+        <!--CSS-->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Philosopher:ital@0;1&display=swap" rel="stylesheet">
+        <link href="css/stylemain.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+        <!-- ローディング画面 -->
+        <div id="loading">
+            <p>Loading...</p>
+            <!-- 以下、スクリーン画面(Loading画面の次) -->
+            <div id="loading-screen"></div>             
+        </div>
+
+        <div id="brog" class="big-bg">
+            <!--ページの上部を作成する-->
+            <header class="home-header wrapper">
+                <!--ナビゲーションメニュー(メニューバーの作成)-->
+                <nav>
+                    <ul class="main-nav">
+                        <li><a href="main.html">Home</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="brog.html">Brog</a></li>
+                        <li><a href="information.html">Information</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- 見出し -->
+            <div class="wrapper">
+                <h2 class="page-title brog-color">Brog</h2>
+            </div>
+        </div>
+
+        <!-- brog content -->
+        <div class="brog-content wrapper">
+            <article>
+                <header class="brog-info">
+                    <h2 class="post-title">Brogを書いています</h2>
+                    <p class="post-cat">カテゴリー : ブログ(?)の紹介</p>
+                </header>
+                <img src="images/wall.jpg" alt="沼津">
+
+                <p>
+                    趣味の旅行の写真やドライブの写真、そのほかあったイベント・出来事をInstagramに投稿しています。
+                    本当はブログのページを作ってやりたいのですが、時間がなくて変更しました泣。
+                    隣のサイドバーの"Instagramの紹介"よりアクセスしていただくことで読むことができます。<br>
+                    ちなみに、上記のタイトル「BROG」の背景は、ソウル市街の夜景の写真です。<br>
+                </p>
+            </article>
+
+            <aside>
+                <h3 class="brog-info">カテゴリー</h3>
+                <ul class="sub-brog">
+                    <li><a href="instagram.html">Instagramの紹介</a></li>
+                    <li><a href="HTML.html">HTMLの勉強用</a></li>
+                    <li><a href="tensorflow2_no1.html">機械学習を行う為の仮想環境構築について</a></li>
+                    <li><a href="tensorflow2_no2.html">機械学習を行う為のツール導入について</a></li>
+                    <li><a href="study_bg.html">コンピュータの計算に隠された罠</a></li>
+                </ul>
+            </aside>
+        </div>
+        
+        
+        <!-- フッターの作成 -->
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2022 Blue-Mountain</small></p>
+            </div>
+        </footer>
+
+    </body>
+</html>

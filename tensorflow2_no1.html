@@ -1,0 +1,157 @@
+<!--ブログの頁-->
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>機械学習を行う為の仮想環境構築について</title>
+        <meta name="description" content="tensorflow2を使って機械学習">
+        <link rel="stylesheet" href="stylemain.css">
+        <!--CSS-->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Philosopher:ital@0;1&display=swap" rel="stylesheet">
+        <link href="css/stylemain.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="brog" class="big-bg">
+            <!--ページの上部を作成する-->
+            <header class="home-header wrapper">
+                <!--ナビゲーションメニュー(メニューバーの作成)-->
+                <nav>
+                    <ul class="main-nav">
+                        <li><a href="main.html">Home</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="brog.html">Brog</a></li>
+                        <li><a href="information.html">Information</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- 見出し -->
+            <div class="wrapper">
+                <h2 class="page-title brog-color">Brog</h2>
+            </div>
+        </div>
+
+        <!-- brog content -->
+        <div class="brog-content wrapper">
+            <article>
+                <header class="brog-info post-info">
+                    <h2 class="post-title brog-title">機械学習を行う為の仮想環境構築について</h2>
+                    <p class="date">5/27 <span>2023</span></p>
+                    <p class="brog-cat">カテゴリー : 機械学習実装の手順1</p>
+                </header>
+
+                <p>
+                    このページでは、tensorflow2を使って、機械学習を進める方法を紹介します.
+                    よくいろんな参考書を見ると、Anacondaを使って機械学習を行うケースが多いですが、
+                    ここでは、Anacondaを使わずにやっていこうと思います.<br>
+                    余談ですが、tensorflowはバージョンが1と2がありますが、2を勧めます.
+                    理由は、ざっくりいえば2の方がより便利に&より簡単にコードを書ける&そのおかげでコードもより見やすいからです.
+                </p>
+
+                <main>
+                    <h3>0. 実装するPCについて</h3>
+                        今回は、
+                        <ul>
+                            <li class="pro-yohaku">OS : Windows 11 Home 64bit</li>
+                            <li class="pro-yohaku">CPU : Intel Core i7-1255U</li>
+                            <li class="pro-yohaku">python : Python 3.11.1</li>
+                        </ul>
+                        でやっていきます(自分がMacに弱いことは・・・ゲホンゲホン).
+                    
+                    <h3>1. 前提</h3>
+                        <p>
+                            前提として、Visual Studio Codeとpythonを使います.<br>
+                            Visual Studio Codeやpythonのインストール方法に関しては, インターネットで検索すると
+                            たくさん出てくるので, ここでは割愛します.
+                            ご自身で参考書をお持ちの方は、pythonのインストール方法が書いてあればそれでもよいと思います.<br>
+                            pythonがちゃんとインストールされたか確認してください. コマンドに"py -V"と入力して、
+                            "Python 3.X.Y"(X,Yは任意の数)が出力されればOKです
+                            (※"pip3 --version"でpipのversionが分かります).
+                        </p>
+                        
+                    <h3>2. 機械学習用のフォルダーを作る(仮想環境構築)</h3>
+                        <p>
+                            インストールが終わったら、まずは機械学習を実装するためのフォルダー(仮想環境)を作っていきます.
+                            任意の場所に任意の名前でフォルダーを作成してください.
+                            以下は、「ドキュメント」フォルダー内に「tensorflow」というフォルダーを作成した例です.
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample1.png?raw=true" width="60%" height="60%" alt="tensorflowのドキュメントファイルの作成">
+
+                    <h3>3. 仮想環境作成ができる標準ツールの為のファイルの作成</h3>
+                        <p>
+                            では, 2で作成した「tensorflow」フォルダーを開いて, 検索タブのところを削除して"cmd"と入力します.
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample2.png?raw=true" width="60%" height="60%" alt="検索タブにcmdを入力">
+
+                        <p>
+                            すると, コマンドプロンプトが表示されると思います.<br>
+                            続いて, コマンドに"py -m venv --system-site-packages .\env"を入力してEnterしましょう.<br>
+                            (余談ですが, このvenvというのはPyhtonの仮想環境作成ができる標準ツールです. これは仮想環境の作成を行うコマンドで, ".\env"はその環境を保存するフォルダ名になります.
+                            基本的には, この".\env"フォルダー内で機械学習用のファイルを作成していくことになります. 詳しいことは省きますが, フォルダー名は.\envがよいです).
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample3.png?raw=true" width="60%" height="60%" alt="">
+
+                        <p>
+                            すると, 以下のようにtensorflowのフォルダー内に「env」というフォルダーが作成されます.
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample4.png?raw=true" width="60%" height="60%" alt="">
+                        
+                    <h3>4. 仮想環境の有効化</h3>
+                        <p>
+                            仮想環境の有効化をします. コマンドに".\env\Scripts\activate"と入力してEnterしてください.
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample5.png?raw=true" width="60%" height="60%" alt="">
+
+                        <p>
+                            Enterすると, 以下のような(仮想環境)コマンドに切り替わります.
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample6.png?raw=true" width="60%" height="60%" alt="">
+
+                        <p>
+                            出来たら, コマンドに"py -m pip install update pip"を入力してEnterしましょう.
+                            以下のような感じになったらOKです.
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample7.png?raw=true" width="80%" height="80%" alt="">
+
+                        <p>
+                            続いて, "py -m pip install --upgrade pip"を入力して,
+                            以下のようにSuccessfully なんたら～とでたら大丈夫です.
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/tensorflow2_images/sample8.png?raw=true" width="80%" height="80%" alt="">
+                        
+                        <p>
+                            これまた余談ですが, 仮想環境を後で終了する場合は, "deactivate"コマンドを実行します
+                            (ぶっちゃけいえば, ×印押して消しても大丈夫な気がしてます).
+                        </p>
+
+                        <p>
+                            以上が, 機械学習を進める上で必要な仮想環境構築の手順になります.
+                            この次にtensorflow2や機械学習をするのに欠かせないツールのインストールに行きますが,
+                            それに関しては右のタスクバーの「機械学習を行う為のツール導入について」にとんでください.
+                        </p>
+                </main>
+            </article>
+            
+            <aside>
+                <h3 class="brog-info">カテゴリー</h3>
+                <ul class="sub-brog">
+                    <li><a href="instagram.html">Instagramの紹介</a></li>
+                    <li><a href="HTML.html">HTMLの勉強用</a></li>
+                    <li><a href="tensorflow2_no1.html">機械学習を行う為の仮想環境構築について</a></li>
+                    <li><a href="tensorflow2_no2.html">機械学習を行う為のツール導入について</a></li>
+                    <li><a href="study_bg.html">コンピュータの計算に隠された罠</a></li>
+                </ul>
+            </aside>
+        </div>
+        
+        <!-- フッターの作成 -->
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2023 Blue-Mountain</small></p>
+            </div>
+        </footer>
+    </body>
+
+</html>

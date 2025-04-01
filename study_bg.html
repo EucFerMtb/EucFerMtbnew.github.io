@@ -1,0 +1,144 @@
+<!--ブログの頁-->
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>コンピュータの計算に隠された罠</title>
+        <meta name="description" content="コンピュータの計算に隠された罠">
+        <link rel="stylesheet" href="stylemain.css">
+        <!--CSS-->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Philosopher:ital@0;1&display=swap" rel="stylesheet">
+        <link href="css/stylemain.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="brog" class="big-bg">
+            <!--ページの上部を作成する-->
+            <header class="home-header wrapper">
+                <!--ナビゲーションメニュー(メニューバーの作成)-->
+                <nav>
+                    <ul class="main-nav">
+                        <li><a href="main.html">Home</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="brog.html">Brog</a></li>
+                        <li><a href="information.html">Information</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- 見出し -->
+            <div class="wrapper">
+                <h2 class="page-title brog-color">Brog</h2>
+            </div>
+        </div>
+
+        <!-- brog content -->
+        <div class="brog-content wrapper">
+            <article>
+                <header class="brog-info post-info">
+                    <h2 class="post-title brog-title">コンピュータの計算に隠された罠</h2>
+                    <p class="date">6/3 <span>2023</span></p>
+                    <p class="brog-cat">カテゴリー : 研究の背景</p>
+                </header>
+              
+                <p>
+                    タイトルがだいぶ飛躍していますが,本ページでは簡単に自分が研究していた分野の
+                    課題や背景を紹介したいと思います.<br>
+                    実際にシミュレーションした結果も載せるので,興味があれば実際にお手元の計算機
+                    を使って実験してみるとより驚きを感じられるかもしれません.
+                </p>
+
+                <main>
+                    <h3>MATLABで数値計算してみた</h3>
+                        <p>
+                            百聞は一見に如かず. まずは実験してみます.<br>
+                            MATLABで次の順で計算をしてみます.
+                            <ol>
+                                <li class="pro-yohaku">u = 2^(-53)と入力</li>
+                                <li class="pro-yohaku">1 + u > 1と入力</li>
+                            </ol>
+                            uは2の53乗分の1なのでかなり小さいですが, 正の値(u > 0)になりますよね.
+                            従って, 1 + u > 1と真偽を問う文を投げると当然, 真を返すはずだ!となりますよね.
+                            では,MATLABでこれをやるとどうでしょうか・・・?<br>
+                            結果は以下のようになります↓
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/image_study_bg/sample1.png?raw=true" width="40%" height="40%" alt="">
+
+                        <p>
+                            なんと"logical 0",すなわち偽だと答えています.マジ!?と思いますよね.<br>
+                            では次に, 
+                            <ul>
+                                <li class="pro-yohaku">2^3000+2^3000==2^4000</li>
+                            </ul>
+                            と書いてみます. これは2^3000 + 2^3000は2^4000と等しいですか?と聞いています.
+                            これはすぐわかると思います.答えは偽ですよね.では,MATLABでこれをやるとどうでしょうか・・・?<br>
+                            結果は以下のようになります↓
+                        </p>
+                        <img src="https://github.com/EucFerMtb/EucFerMtb.github.io/blob/main/image_study_bg/sample2.png?raw=true" width="40%" height="40%" alt="">
+
+                        <p>
+                            答えは"logical 1", すなわち真と答えています.とんでもないですね.
+                        </p>
+          
+                    <h3>iphoneの電卓にも罠が・・・</h3>
+                        <p>
+                            MATLABで数値実験をしたので今度は,もっと身近な例を紹介しましょう.
+                            iphoneの電卓でやってみます.実はiphoneの電卓でもえらいことが起きます
+                            (Androidだと指数表記になってしまうので, iphoneの電卓が良いです).<br>
+                            手順を書いておきます.注目してほしいのは下3桁なのでそこに目を凝らしながらやってみてください.
+                            <ol>
+                                <li class="pro-yohaku">u = 2^(53)と入力</li>
+                                <li class="pro-yohaku">そこに1を足す</li>
+                                <li class="pro-yohaku">次にそこに2を足す</li>
+                                <li class="pro-yohaku">次にそこに3を足す</li>
+                                <li class="pro-yohaku">更にそこに3を足す</li>
+                            </ol>
+                            訳あって画像は貼れないですが, こんな現象が起こると思います.
+                            <ol>
+                                <li class="pro-yohaku">u = 2^(53)の下3桁は992</li>
+                                <li class="pro-yohaku">そこに1を足しても結果は変わらない(992のまま!?)</li>
+                                <li class="pro-yohaku">そこに2を足すと+2される(994になる)</li>
+                                <li class="pro-yohaku">次にそこに3を足すと下3桁が994+3=997ではなく996になる!?</li>
+                                <li class="pro-yohaku">更にそこに3を足すと下4桁が1000(999ではなく)になる!?</li>
+                            </ol>
+                        </p>
+
+                    <h3>まとめ</h3>
+                        <p>
+                            上記のようにコンピュータの計算は実は正確ではありません. 
+                            つまり、計算機には誤差というものが混入されています.
+                            コンピュータは速くて便利なものというイメージがあると思いますが,
+                            このように誤差があるので精度も担保できないと計算として意味を成しません.
+                            私たちの生活にはこのような問題が潜んでいるのです・・・.<br>
+                            私が行っていた研究はこのような問題に向き合い, どのようにすれば速く・高精度に計算できるか
+                            理論による証明と実際にアルゴリズムを組んで計算時間及び誤差の精度を見ることをしていました.
+                        </p>
+                </main>
+            </article>
+
+            <aside>
+                <h3 class="brog-info">カテゴリー</h3>
+                <ul class="sub-brog">
+                    <li><a href="instagram.html">Instagramの紹介</a></li>
+                    <li><a href="HTML.html">HTMLの勉強用</a></li>
+                    <li><a href="tensorflow2_no1.html">機械学習を行う為の仮想環境構築について</a></li>
+                    <li><a href="tensorflow2_no2.html">機械学習を行う為のツール導入について</a></li>
+                    <li><a href="study_bg.html">コンピュータの計算に隠された罠</a></li>
+                </ul>
+            </aside>
+        </div>
+        
+        
+        <!-- フッターの作成 -->
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2023 Blue-Mountain</small></p>
+            </div>
+        </footer>
+    </body>
+
+</html>
+
+
+

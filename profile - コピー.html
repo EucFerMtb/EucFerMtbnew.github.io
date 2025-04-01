@@ -1,0 +1,136 @@
+<!--メインの頁-->
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>自己紹介ページ</title>
+        <meta name="description" content="自己紹介のページ">
+        <link rel="stylesheet" href="stylemain.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body class="pro-body">
+        <!-- ローディング画面 -->
+        <div id="loading">
+            <p>Loading...</p>
+            <!-- 以下、スクリーン画面(Loading画面の次) -->
+            <div id="loading-screen"></div>             
+        </div>
+        
+        <!-- headerは画像に変える!!! -->
+        <div id="Profile" class="big-bg">
+            <!--ページの上部を作成する-->
+            <header class="home-header wrapper">
+                <!--ナビゲーションメニュー(メニューバーの作成)-->
+                <nav>
+                    <ul class="main-nav">
+                        <li><a href="main.html">Home</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="brog.html">Brog</a></li>
+                        <li><a href="information.html">Information</a></li>
+                    </ul>
+                    
+                </nav>
+            </header>
+
+            <!-- 見出し -->
+            <div class="wrapper">
+               <h2 class="page-title profilemei">Profile</h2>
+            </div>
+        </div>
+
+
+        <div class="pro-content">
+            <main>
+                <h2 class="pro-yohaku">研究について</h2>
+                    <ul class="pro-yohaku">
+                        <li>連立一次方程式の数値解を求める高速かつ高精度なアルゴリズムを提案しました</li>
+                    </ul>
+                <h2 class="pro-yohaku">KeyWords</h2>
+                    <ul class="pro-yohaku">
+                        <li>精度保証付き数値計算</li>
+                        <li>数値線形代数(連立一次方程式、行列計算)</li>
+                        <li>高精度計算数値計算アルゴリズム</li>
+                        <li>反復改良法(残差反復法)</li>
+                    </ul>
+                    
+                <h2 class="pro-yohaku">業績</h2>
+                <h3 class="pro-yohaku">国際発表</h3>
+                    <ul class="profile-nav">
+                        <li class="pro-yohaku"><a href="https://jsst-conf.jp/2022/" target="_blank">The 41st JSST Annual International Conference on Simulation Technology</a>(Online, 2022/8/31)</li>
+                    </ul>
+                    
+                <h2 class="pro-yohaku">趣味</h2>
+                    <ul class="pro-yohaku">
+                        <li>国内旅行(47都道府県制覇目標)、海外旅行</li>
+                        <li>ドライブ</li>
+                        <li>ツーリング</li>
+                        <li>ライブ鑑賞</li>
+                        <li>スノボ</li>
+                    </ul>
+
+                <h3 class="pro-yohaku">国内観光～47個埋めたい～</h2>
+                    <ul class="pro-yohaku">
+                        <li>北海道(函館、札幌、小樽)</li>
+                        <li>岩手(盛岡、平泉、宮古)</li>
+                        <li>宮城(仙台、石巻、松島)</li>
+                        <li>山形(蔵王温泉)</li>
+                        <li>福島(南会津、大内宿、いわき、耶麻郡)</li>
+                        <li>茨城(土浦、水戸、日立)</li>
+                        <li>栃木(宇都宮、日光、那珂川町、那須塩原)</li>
+                        <li>群馬(草津温泉、土合駅)</li>
+                        <li>埼玉(いろいろ)</li>
+                        <li>東京(いろいろ)</li>
+                        <li>千葉(成田、舞浜、銚子など)</li>
+                        <li>神奈川(鎌倉、根府川、箱根、小田原)</li>
+                        <li>静岡(沼津、伊豆、三島)</li>
+                        <li>愛知(名古屋、蟹江)</li>
+                        <li>石川(金沢)</li>
+                        <li>三重(伊勢、鳥羽、志摩)</li>
+                        <li>京都(市内)</li>
+                        <li>奈良</li>
+                        <li>大阪(ユニバ、道頓堀周辺)</li>
+                        <li>兵庫(有馬温泉)</li>
+                        <li>広島(厳島、呉)</li>
+                        <li>愛媛(メインは、松山、今治、伊予、上浮穴郡)</li>
+                        <li>高知(高岡郡梼原町)</li>
+                    </ul>
+
+                <h3 class="pro-yohaku">海外観光～色々な所を訪れたい～</h2>
+                    <ul class="pro-yohaku">
+                        <li>オーストラリア(ブリスベン)</li>
+                        <li>韓国(ソウル、ヨンイン)</li>
+                        <li>中国(北京、上海)※transit</li>
+                        <li>ドイツ(ベルリン、ミュンヘン、フュッセン、ウルム、フランクフルト、ケルン、アーヘン)</li>
+                        <li>フランス(パリ、レンヌ、モンサンミッシェル)</li>
+                    </ul>
+
+                <h2 class="pro-yohaku">ひと言</h2>
+                    <ul class="pro-yohaku profile-nav">
+                        <li>(大学時代)数理科学研究会に所属していました。是非、CHECKお願いします→<a href="https://sitmathclub.github.io/" target="_blank">芝浦工業大学　数理科学研究会</a></li>
+                        <li>(大学時代)前期に「データ構造とアルゴリズム」のSAを担当しました</li>
+                        <li>(大学時代)後期に「プログラミング演習」のSAを担当しました</li>
+                        <li>新しいディスプレイを約3万円で購入しました</li>
+                        <li>Core-i7(CPU 第12世代)のPCを買ってしまいました(PC3台もち)</li>
+                        <li>バイク購入しました。ツーリングよくします。</li>
+                    </ul>
+
+                <h2 class="pro-yohaku">その他リンク集(自分用)</h2>
+                    <ul class="profile-nav">
+                        <li class="pro-yohaku"><a href="https://www.advanpix.com/#:~:text=The%20Multiprecision%20Computing%20Toolbox%20is%20the%20MATLAB%20extension,that%20are%20capable%20of%20computing%20with%20arbitrary%20precision." target="_blank">Multiprecision Computing Toolbox for MATLAB</a></li>
+                    </ul>
+
+                </main>
+        </div>
+        
+        <!-- フッターの作成 -->
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2022 Blue-Mountain</small></p>
+            </div>
+        </footer>
+
+    </body>
+
+</html>

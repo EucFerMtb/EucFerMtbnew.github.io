@@ -1,0 +1,140 @@
+<!--Informationの頁-->
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>お問い合わせのページ</title>
+        <meta name="description" content="お問い合わせのページ">
+        <link rel="stylesheet" href="stylemain.css">
+        <!--CSS-->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Philosopher:ital@0;1&display=swap" rel="stylesheet">
+        <link href="css/stylemain.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+        <!-- ローディング画面 -->
+        <div id="loading">
+            <p>Loading...</p>
+            <!-- 以下、スクリーン画面(Loading画面の次) -->
+            <div id="loading-screen"></div>             
+        </div>
+        
+        <div id="information" class="big-bg">
+            <!--ページの上部を作成する-->
+            <header class="home-header wrapper">
+                <!--ナビゲーションメニュー(メニューバーの作成)-->
+                <nav>
+                    <ul class="main-nav">
+                        <li><a href="main.html">Home</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="brog.html">Brog</a></li>
+                        <li><a href="information.html">Information</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- 見出し -->
+            <div class="wrapper">
+                <h2 class="page-title">Infomation</h2>
+            </div>
+        </div>
+
+        <div class="information-content">
+            <div class="info-form">
+                <h2>～お問い合わせ～</h2>
+                <p>↓↓お問い合わせはこちらからお願いします↓↓</p>
+                <a href="mailto:bv19021@shibaura-it.ac.jp">お問い合わせ</a>
+            </div>
+        </div>
+        
+        
+        <!-- 地図の表示 -->
+        <section id="location">
+            <div class="wrapper">
+                <div class="location-info">
+                    <h3 class="sub-title">芝浦工業大学 大宮キャンパス</h3>
+                    <p>
+                        大学の詳細・紹介は<a class="profile-nav" href="https://www.shibaura-it.ac.jp/" target="_blank">こちらから</a>お願いします。<br>
+                        このキャンパスで研究していました。今は卒業したのでもういませんが・・・。<br>
+                        このキャンパスには芝猫という猫がいまして、大変かわいいです。
+                    </p>
+                </div>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3471.6308802332856!2d139.6549358415809!3d35.95174536450997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018c721d0697a41%3A0xc3d9398c116f5277!2z6Iqd5rWm5bel5qWt5aSn5a2mIOWkp-WuruOCreODo-ODs-ODkeOCuQ!5e0!3m2!1sja!2sjp!4v1658551575224!5m2!1sja!2sjp" width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-form">
+            <p>日付が変わるまで残り<span id="timer"></span>です。本日もお疲れさまです・・・。</p>
+        </section>
+
+        <!-- SNSのプラグイン -->
+        <section id="sns">
+            <div class="wrapper">
+                <!-- Twitterの挿入 -->
+                <div class="sns-box">
+                    <h3 class="sub-title">Twitter</h3>
+                    <a class="twitter-timeline" data-height="315" href="https://twitter.com/MtB_0930?ref_src=twsrc%5Etfw" target="_blank">Tweets by MtB_0930</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+        
+                <div class="sns-box">
+                    <h3 class="sub-title">数理科学科の紹介</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_joT2hy8zcg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="sns-box">
+                    <h3 class="sub-title">数理科学科 院生の紹介</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vTS5Q9lkM_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- フッターの作成 -->
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2022 Blue-Mountain</small></p>
+            </div>
+        </footer>
+        
+        <script>
+            'use strict';
+            function countdown(due){
+                const now = new Date();
+        
+                const rest = due.getTime() - now.getTime();
+                const sec = Math.floor(rest/1000)%60;
+                const min = Math.floor(rest/1000/60)%60;
+                const hours = Math.floor(rest/1000/60/60)%24;
+                const days = Math.floor(rest/1000/60/60/24);
+                const count = [days,hours,min,sec];
+        
+                return count;
+            }
+        
+            let goal = new Date();
+            goal.setHours(23);
+            goal.setMinutes(59);
+            goal.setSeconds(59);
+        
+            // console.log(countdown(goal));
+            function recalc(){
+                const counter = countdown(goal);
+                const time = `${counter[1]}時間${counter[2]}分${counter[3]}秒`;
+                document.getElementById('timer').textContent = time;
+                refresh();
+            }
+            
+            function refresh(){
+                setTimeout(recalc,1000);
+            }
+        
+            recalc();
+        </script>
+    </body>
+
+</html>
